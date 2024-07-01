@@ -4,11 +4,8 @@ pipeline {
     stages {
         stage('Run Python Script') {
             steps {
-                // Use a Python Docker image to run the script
                 script {
-                    
-                        sh 'python3 main.py'
-                    
+                    echo 'script here'
                 }
             }
         }
@@ -16,7 +13,13 @@ pipeline {
 
     post {
         always {
-            echo 'This stage runs after all stages are complete.'
+            echo 'Pipeline execution completed.'
+        }
+        success {
+            echo 'This pipeline succeeded.'
+        }
+        failure {
+            echo 'This pipeline failed.'
         }
     }
 }
