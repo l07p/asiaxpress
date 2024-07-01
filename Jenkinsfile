@@ -1,19 +1,10 @@
 pipeline {
     agent any
-    stages {
-        stage('Build') {
+        stage('Run Python Script from root asiaxpress') {
             steps {
-                sh 'echo "Building..."'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'echo "Testing..."'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                sh 'echo "Deploying..."'
+                script {
+                sh 'python3 main.py'
+                }
             }
         }
     }
