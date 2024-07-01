@@ -10,4 +10,9 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            echo 'This stage runs after all stages are complete.'
+        }
+    }
 }
